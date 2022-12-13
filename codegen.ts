@@ -1,8 +1,9 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
+const products= process.env.GET_PRODUCTS
 
 export const config: CodegenConfig = {
 	schema:
-		'https://api-eu-west-2.hygraph.com/v2/clbcovhq212ur01uib4v0eow6/master',
+		products,
 	documents: 'graphql/*.graphql',
 	generates: {
 		'src/gql/': {
