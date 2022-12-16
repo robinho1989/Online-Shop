@@ -1,9 +1,18 @@
 import { useRouter } from 'next/router';
+import { useGetProductDetailsBySlugQuery } from '../generated/graphql';
 
 export default function ProductDetail() {
-	
 	const router = useRouter();
-	const {productSlug} = router.query;
+
+	const { slug } = router.query;
+	const productSlug = typeof slug === 'string' ? slug : undefined;
+	// const { loading, data, error } = useGetProductsQuery();
+
+	const { data, loading, error } = useGetProductDetailsBySlugQuery({
+		variables: {
+			slug: productSlug,
+		},
+	});
 
 	return <p>Product slug: {productSlug}</p>;
 }
