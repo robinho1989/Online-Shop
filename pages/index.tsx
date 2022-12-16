@@ -1,29 +1,21 @@
-import { useQuery, gql } from '@apollo/client';
-import { Category } from '../generated/graphql';
+import Link from 'next/link';
+
+import { useGetProductsQuery } from '../generated/graphql';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-	const GET_PRODUCTS = gql`
-		query GetProducts {
-			products {
-				description
-				name
-				price
+	const { loading, data, error } = useGetProductsQuery();
 
-				images {
-					fileName
-					url
-				}
-			}
-		}
-	`;
-	const { loading, error, data } = useQuery<Category>(GET_PRODUCTS);
 	if (loading) return <p>Loading...</p>;
-	console.log(data);
+	if (error) return <p>Error</p>;
 	return (
 		<ul>
 			{data?.products.map((item) => {
-				return <li key={item.name}>{item.name}</li>;
+				return (
+					<li key={item.name}>
+						<Link href={`/slug/${item.slug}`}>{item.name}</Link>
+					</li>
+				);
 			})}
 		</ul>
 	);

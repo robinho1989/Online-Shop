@@ -1,12 +1,12 @@
 query GetProducts {
-			products {
-				description
-				name
-				price
-
-				images {
-					fileName
-					url
-				}
-			}
+	products {
+		description
+		name
+		price
+		images {
+			fileName
+			url
 		}
+		slug
+	}
+}
