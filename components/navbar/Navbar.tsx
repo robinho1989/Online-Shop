@@ -1,11 +1,9 @@
-import { Logo } from "../logo/Logo"
-import { SearchInput } from "../serachInput/SearchInput"
+import { MobileNav } from '../mobileNav/MobileNav';
 
-export const Navbar=()=>{
-    return(
-        <nav>
-            <Logo/>
-            <SearchInput/>
-        </nav>
-    )
-}
+export const Navbar = () => {
+	return (
+		<nav>
+			<MobileNav />
+		</nav>
+	);
+};
