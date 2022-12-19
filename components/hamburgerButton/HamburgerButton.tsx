@@ -1,7 +1,10 @@
 import styles from './hamburgerButton.module.css';
-export const HamburgerButton = () => {
+type ButtonProps = {
+	handleOpenNav: () => void;
+};
+export const HamburgerButton = ({handleOpenNav}: ButtonProps) => {
 	return (
-		<button className={styles.hamburgerButton}>
+		<button onClick={handleOpenNav} className={styles.hamburgerButton}>
 			<div className={styles.container}>
 				<div className={styles.barFirst}></div>
 				<div className={styles.barSecond}></div>
