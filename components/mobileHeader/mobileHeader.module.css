@@ -1,6 +1,7 @@
-.mobileNavContainer {
+.mobileHeaderContainer {
 	display: flex;
 	justify-content: space-between;
+	position: relative;
 	width: 100%;
 }
 .linksContainer {
@@ -8,4 +9,9 @@
 }
 .anchorLinkList {
 	display: flex;
+}
+@media (min-width: 800px) {
+	.mobileHeaderContainer {
+		display: none;
+	}
 }

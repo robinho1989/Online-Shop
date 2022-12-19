@@ -7,15 +7,17 @@ import {
 } from 'react-icons/fa';
 import { HamburgerButton } from '../hamburgerButton/HamburgerButton';
 import { Logo } from '../logo/Logo';
-import styles from './mobileNav.module.css';
+import { MobileNavbar } from '../mobileNavbar/MobileNavbar';
+import styles from './mobileHeader.module.css';
 import Link from 'next/link';
-export const MobileNav = () => {
+export const MobileHeader = () => {
 	return (
-		<div className={styles.mobileNavContainer}>
-			<div className={styles.navContainer}>
+		<div className={styles.mobileHeaderContainer}>
+			<div className={styles.headerContainer}>
 				<HamburgerButton />
 				<Logo />
 			</div>
+			<MobileNavbar/>
 			<div className={styles.linksContainer}>
 				<button className={styles.mobileSearchButton}>
 					<FaSearch className={styles.searchButtonIcon} />

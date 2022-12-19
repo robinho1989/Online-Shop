@@ -1,11 +1,12 @@
 import React from 'react';
-import { Navbar } from '../navbar/Navbar';
+import { MobileHeader } from '../mobileHeader/MobileHeader';
+
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<>
 			<header>
-				<Navbar/>
+				<MobileHeader/>
 			</header>
 			<main>{children}</main>
 			<footer>2</footer>
