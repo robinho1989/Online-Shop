@@ -14,7 +14,7 @@ export default function Home() {
 			{data?.products.map((item) => {
 				return (
 					<li key={item.name}>
-						<Link href={`/slug/${item.slug}`}>{item.name}</Link>
+						<Link href={`${item.slug}`}>{item.name}</Link>
 					</li>
 				);
 			})}
