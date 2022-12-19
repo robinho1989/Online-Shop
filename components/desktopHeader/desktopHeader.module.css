@@ -1,0 +1,9 @@
+.desktopHeaderContainer {
+	display: none;
+}
+
+@media (min-width: 800px) {
+	.desktopHeaderContainer {
+		display: flex;
+	}
+}
