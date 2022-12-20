@@ -3,7 +3,8 @@ import styles from './logo.module.css';
 export const Logo = () => {
 	return (
 		<Link className={styles.logo} href={'/'}>
-			My online shop
+			<span className={styles.logoSecondColor}>My</span>Online
+			<span className={styles.logoSecondColor}>Shop</span>
 		</Link>
 	);
 };

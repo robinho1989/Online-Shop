@@ -3,11 +3,22 @@
 	margin: 0;
 	padding: 0;
 }
+:root {
+	--logoMainColor: #289b38;
+	--logoSecondColor: #035e3a;
+	--textColor:#2f2f2f;
+}
 html,
 body,
 #__next {
 	height: 100%;
 	width: 100%;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.6rem;
 }
 
 a {
