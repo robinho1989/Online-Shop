@@ -31,24 +31,24 @@ export const MobileHeader = () => {
 					<FaSearch className={styles.searchButtonIcon} />
 				</button>
 				<ul className={styles.anchorLinkList}>
-					<li>
+					<li className={styles.anchorLink}>
 						<Link href={''}>
-							<FaPhone className={styles.anchorLink} />
+							<FaPhone className={styles.anchorIcon} />
 						</Link>
 					</li>
-					<li>
+					<li className={styles.anchorLink}>
 						<Link href={''}>
-							<FaHeart className={styles.anchorLink} />
+							<FaHeart className={styles.anchorIcon} />
 						</Link>
 					</li>
-					<li>
+					<li className={styles.anchorLink}>
 						<Link href={''}>
-							<FaUser className={styles.anchorLink} />
+							<FaUser className={styles.anchorIcon} />
 						</Link>
 					</li>
-					<li>
+					<li className={styles.anchorLink}>
 						<Link href={''}>
-							<FaShoppingBasket className={styles.anchorLink} />
+							<FaShoppingBasket className={styles.anchorIcon} />
 						</Link>
 					</li>
 				</ul>

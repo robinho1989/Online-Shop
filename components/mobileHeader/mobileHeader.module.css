@@ -1,5 +1,4 @@
 .mobileHeaderContainer {
-	box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -7,7 +6,7 @@
 	position: relative;
 	width: 100%;
 }
-.headerContainer{
+.headerContainer {
 	display: flex;
 	align-items: center;
 }
@@ -16,6 +15,24 @@
 }
 .anchorLinkList {
 	display: flex;
+}
+.mobileSearchButton {
+	background-color: transparent;
+	border: none;
+	display: inline-block;
+	padding: 1rem;
+}
+.searchButtonIcon {
+	height: 24px;
+	width: 24px;
+}
+.anchorIcon {
+	height: 24px;
+	width: 24px;
+}
+.anchorLink {
+	padding: 1rem;
+	list-style: none;
 }
 @media (min-width: 800px) {
 	.mobileHeaderContainer {

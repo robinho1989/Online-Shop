@@ -19,7 +19,7 @@ export const MobileNavbar = ({ handleCloseNav, isOpen }: ButtonProps) => {
 				<li className={styles.mobileLinkItem}>5</li>
 			</ul>
 			<button onClick={handleCloseNav} className={styles.mobileNavButton}>
-				<FaTimes />
+				<FaTimes className={styles.mobileButtonIcon} />
 			</button>
 		</nav>
 	);

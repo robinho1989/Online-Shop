@@ -5,5 +5,11 @@
 @media (min-width: 800px) {
 	.desktopHeaderContainer {
 		display: flex;
+		padding: 0 1.5rem;
+	}
+}
+@media (min-width: 1200px) {
+	.desktopHeaderContainer {
+		padding: 0;
 	}
 }
