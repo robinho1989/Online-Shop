@@ -12,21 +12,23 @@ export const DesktopHeader = () => {
 				<Logo />
 				<SearchInput />
 				<button className={styles.infoButton}>
-					<GiReturnArrow />
-					<div className={styles.buttonConten}>
-						<p>100 dni na darmowy zwrot</p>
-						<p>zobacz szczegóły</p>
+					<GiReturnArrow className={styles.buttonIcon} />
+					<div className={styles.buttonContent}>
+						<p className={styles.buttonContentHeader}>
+							100 dni na darmowy zwrot
+						</p>
+						<p className={styles.buttonContentDescription}>zobacz szczegóły</p>
 					</div>
 				</button>
 				<button className={styles.infoButton}>
-					<FaShuttleVan />
-					<div className={styles.buttonConten}>
-						<p>darmowa dostawa</p>
-						<p>zobacz szczegóły</p>
+					<FaShuttleVan className={styles.buttonIcon} />
+					<div className={styles.buttonContent}>
+						<p className={styles.buttonContentHeader}>darmowa dostawa</p>
+						<p className={styles.buttonContentDescription}>zobacz szczegóły</p>
 					</div>
 				</button>
 				<button className={styles.shoppingBasket}>
-					<FaShoppingBasket /> Koszyk{' '}
+					<FaShoppingBasket className={styles.shoppingBasketIcon} /> Koszyk(0)
 				</button>
 			</div>
 			<DesktopNavbar />

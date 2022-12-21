@@ -5,9 +5,20 @@
 @media (min-width: 800px) {
 	.desktopNavbar {
 		display: block;
+
+		padding: 0 1.5rem;
 	}
 	.desktopLinkList {
 		display: flex;
+		list-style: none;
+		justify-content: space-between;
+		padding-bottom: 1rem;
 		width: 100%;
+	}
+}
+@media (min-width: 1200px) {
+	.desktopNavbar {
+		display: block;
+		padding: 0;
 	}
 }

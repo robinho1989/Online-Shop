@@ -12,11 +12,11 @@ export const MobileNavbar = ({ handleCloseNav, isOpen }: ButtonProps) => {
 			}
 		>
 			<ul className={styles.mobileLinkList}>
-				<li className={styles.mobileLinkItem}>1</li>
-				<li className={styles.mobileLinkItem}>2</li>
-				<li className={styles.mobileLinkItem}>3</li>
-				<li className={styles.mobileLinkItem}>4</li>
-				<li className={styles.mobileLinkItem}>5</li>
+				<li className={styles.mobileLinkItem}>Link 1</li>
+				<li className={styles.mobileLinkItem}>Link 2</li>
+				<li className={styles.mobileLinkItem}>Link 3</li>
+				<li className={styles.mobileLinkItem}>Link 4</li>
+				<li className={styles.mobileLinkItem}>Link 5</li>
 			</ul>
 			<button onClick={handleCloseNav} className={styles.mobileNavButton}>
 				<FaTimes className={styles.mobileButtonIcon} />

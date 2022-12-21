@@ -1,7 +1,12 @@
 .logo {
 	color: var(--logoMainColor);
-    font-size: 24px;
+	font-size: 24px;
 }
 .logoSecondColor {
 	color: var(--logoSecondColor);
+}
+@media (min-width: 800px) {
+	.logo {
+		font-size: 4rem;
+	}
 }

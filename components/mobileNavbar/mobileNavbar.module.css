@@ -16,6 +16,9 @@
 	height: 24px;
 	width: 24px;
 }
+.mobileLinkItem{
+	list-style: none;
+}
 .mobileNavButton {
 	background-color: transparent;
 	border: none;
