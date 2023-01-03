@@ -8,7 +8,20 @@ const handler: NextApiHandler = async (req, res) => {
 	if (!reqBody.email) {
 		res.status(400).json({ error: 'Email not sent' });
 	}
-	res.status(200).json({ info: 'Done' });
+	const response = await fetch(
+		'https://connect.mailerlite.com/api/subscribers',
+		{
+			method: 'POST',
+			headers: {
+				accept: 'application/json',
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.NEXT_PUBLIC_MAILERLITE}`,
+			},
+			body: JSON.stringify(req.body),
+		}
+	);
+  console.log(response)
+	res.status(200).json({ response });
 };
 
 export default handler;
