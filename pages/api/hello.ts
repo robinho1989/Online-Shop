@@ -1,13 +1,14 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiHandler } from 'next';
 
-type Data = {
-  name: string
-}
+const handler: NextApiHandler = async (req, res) => {
+	if (req.method !== 'POST') {
+		res.status(405).setHeader('Access-Control-Allow-Methods', 'POST').end();
+	}
+	const reqBody = JSON.parse(req.body);
+	if (!reqBody.email) {
+		res.status(400).json({ error: 'Email not sent' });
+	}
+	res.status(200).json({ info: 'Done' });
+};
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
-}
+export default handler;
