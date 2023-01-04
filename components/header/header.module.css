@@ -13,7 +13,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 1rem;
 	position: relative;
 	width: 100%;
 }
@@ -25,6 +24,14 @@
 }
 .desktopNavbar {
 	display: none;
+	padding: 0 1.5rem;
+}
+.desktopLinkList {
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+	padding-bottom: 1rem;
+	width: 100%;
 }
 .infoButton {
 	background-color: transparent;
@@ -114,9 +121,15 @@
 	transform: translateX(0);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
 	.desktopHeaderContainer {
 		display: flex;
+	}
+	.desktopNavbar {
+		display: block;
+	}
+	.headerContainer {
+		padding-left: 1.5rem;
 	}
 	.mobileNavbar {
 		display: none;
@@ -127,6 +140,13 @@
 }
 @media (min-width: 1200px) {
 	.desktopHeaderContainer {
-		padding: 01.5rem 0;
+		padding: 1.5rem 0;
+	}
+	.desktopNavbar {
+		display: block;
+		padding: 0;
+	}
+	.headerContainer {
+		padding-left: 0;
 	}
 }

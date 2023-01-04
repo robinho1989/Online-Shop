@@ -5,7 +5,7 @@
 .logoSecondColor {
 	color: var(--logoSecondColor);
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
 	.logo {
 		font-size: 4rem;
 	}

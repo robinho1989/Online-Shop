@@ -17,7 +17,7 @@
 	width: 24px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
 	.hamburgerButton {
 		display: none;
 	}
