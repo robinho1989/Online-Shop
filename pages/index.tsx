@@ -6,7 +6,6 @@ import styles from '../styles/Home.module.css';
 export default function Home() {
 	const { loading, data, error } = useGetProductsQuery();
 
-	console.log(data);
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error</p>;
 	return (
