@@ -23,63 +23,70 @@ export const Header = () => {
 	return (
 		<header className={styles.header}>
 			<div className='wrapper'>
-				<HamburgerButton handleOpenNav={handleOpenMobileNav} />
-				<Logo />
-				<div className={styles.mobileHeaderContainer}>
-					<div className={styles.linksContainer}>
-						<button className={styles.mobileSearchButton}>
-							<FaSearch className={styles.searchButtonIcon} />
+				<div className={styles.headerContainer}>
+					<div className={styles.logoAndBurgerButtonContainer}>
+						<HamburgerButton handleOpenNav={handleOpenMobileNav} />
+						<Logo />
+					</div>
+
+					<div className={styles.mobileHeaderContainer}>
+						<div className={styles.mobileLinksContainer}>
+							<button className={styles.mobileSearchButton}>
+								<FaSearch className={styles.searchButtonIcon} />
+							</button>
+							<ul className={styles.mobileAnchorLinkList}>
+								<li className={styles.anchorLink}>
+									<Link href={''}>
+										<FaPhone className={styles.anchorIcon} />
+									</Link>
+								</li>
+								<li className={styles.anchorLink}>
+									<Link href={''}>
+										<FaHeart className={styles.anchorIcon} />
+									</Link>
+								</li>
+								<li className={styles.anchorLink}>
+									<Link href={''}>
+										<FaUser className={styles.anchorIcon} />
+									</Link>
+								</li>
+								<li className={styles.anchorLink}>
+									<Link href={''}>
+										<FaShoppingBasket className={styles.anchorIcon} />
+									</Link>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<SearchInput />
+					<div className={styles.desktopHeaderContainer}>
+						<button className={styles.infoButton}>
+							<GiReturnArrow className={styles.buttonIcon} />
+							<div className={styles.buttonContent}>
+								<p className={styles.buttonContentHeader}>
+									100 dni na darmowy zwrot
+								</p>
+								<p className={styles.buttonContentDescription}>
+									zobacz szczegóły
+								</p>
+							</div>
 						</button>
-						<ul className={styles.anchorLinkList}>
-							<li className={styles.anchorLink}>
-								<Link href={''}>
-									<FaPhone className={styles.anchorIcon} />
-								</Link>
-							</li>
-							<li className={styles.anchorLink}>
-								<Link href={''}>
-									<FaHeart className={styles.anchorIcon} />
-								</Link>
-							</li>
-							<li className={styles.anchorLink}>
-								<Link href={''}>
-									<FaUser className={styles.anchorIcon} />
-								</Link>
-							</li>
-							<li className={styles.anchorLink}>
-								<Link href={''}>
-									<FaShoppingBasket className={styles.anchorIcon} />
-								</Link>
-							</li>
-						</ul>
+						<button className={styles.infoButton}>
+							<FaShuttleVan className={styles.buttonIcon} />
+							<div className={styles.buttonContent}>
+								<p className={styles.buttonContentHeader}>darmowa dostawa</p>
+								<p className={styles.buttonContentDescription}>
+									zobacz szczegóły
+								</p>
+							</div>
+						</button>
+						<button className={styles.shoppingBasket}>
+							<FaShoppingBasket className={styles.shoppingBasketIcon} />{' '}
+							Koszyk(0)
+						</button>
 					</div>
 				</div>
-				<SearchInput />
-				<div className={styles.desktopHeaderContainer}>
-					<button className={styles.infoButton}>
-						<GiReturnArrow className={styles.buttonIcon} />
-						<div className={styles.buttonContent}>
-							<p className={styles.buttonContentHeader}>
-								100 dni na darmowy zwrot
-							</p>
-							<p className={styles.buttonContentDescription}>
-								zobacz szczegóły
-							</p>
-						</div>
-					</button>
-					<button className={styles.infoButton}>
-						<FaShuttleVan className={styles.buttonIcon} />
-						<div className={styles.buttonContent}>
-							<p className={styles.buttonContentHeader}>darmowa dostawa</p>
-							<p className={styles.buttonContentDescription}>
-								zobacz szczegóły
-							</p>
-						</div>
-					</button>
-					<button className={styles.shoppingBasket}>
-						<FaShoppingBasket className={styles.shoppingBasketIcon} /> Koszyk(0)
-					</button>
-				</div>
+
 				<nav
 					className={
 						open

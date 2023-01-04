@@ -1,0 +1,132 @@
+.buttonIcon {
+	height: 24px;
+	margin-right: 1rem;
+	width: 24px;
+}
+.buttonContentHeader {
+	font-size: 1.4rem;
+}
+.buttonContentDescription {
+	font-size: 1.2rem;
+}
+.headerContainer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 1rem;
+	position: relative;
+	width: 100%;
+}
+.desktopHeaderContainer {
+	display: none;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1.5rem;
+}
+.desktopNavbar {
+	display: none;
+}
+.infoButton {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	color: var(--desktopHeadercolor);
+	margin-right: 1.5rem;
+}
+.logoAndBurgerButtonContainer {
+	display: flex;
+	align-items: center;
+}
+.mobileLinksContainer {
+	display: flex;
+}
+.mobileAnchorLinkList {
+	display: flex;
+}
+.mobileSearchButton {
+	background-color: transparent;
+	border: none;
+	display: inline-block;
+	padding: 1rem;
+}
+.searchButtonIcon {
+	height: 24px;
+	width: 24px;
+}
+.shoppingBasket {
+	background-color: var(--desktopHeadercolor);
+	border: none;
+	border-radius: 7px;
+	color: var(--mainBackground);
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	font-size: 1.4rem;
+	height: 48px;
+	padding: 0 1.6rem;
+}
+.shoppingBasketIcon {
+	height: 16px;
+	margin-right: 0.5rem;
+	width: 16px;
+}
+.anchorIcon {
+	height: 24px;
+	width: 24px;
+}
+.anchorLink {
+	padding: 1rem;
+	list-style: none;
+}
+.mobileNavbar {
+	background-color: var(--mainBackground);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transform: translateX(-100%);
+	transition: transform 0.7s;
+}
+.mobileButtonIcon {
+	height: 24px;
+	width: 24px;
+}
+.mobileLinkItem {
+	list-style: none;
+}
+.mobileNavButton {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 1.5rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.active {
+	transform: translateX(0);
+}
+
+@media (min-width: 800px) {
+	.desktopHeaderContainer {
+		display: flex;
+	}
+	.mobileNavbar {
+		display: none;
+	}
+	.mobileLinksContainer {
+		display: none;
+	}
+}
+@media (min-width: 1200px) {
+	.desktopHeaderContainer {
+		padding: 01.5rem 0;
+	}
+}

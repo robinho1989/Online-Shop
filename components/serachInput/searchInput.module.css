@@ -1,7 +1,7 @@
 .form {
 	border: 1px solid var(--desktopHeadercolor);
 	border-radius: 3px;
-	display: flex;
+	display: none;
 	align-items: center;
 }
 
@@ -11,7 +11,7 @@
 	height: 46px;
 	padding: 0 1.6rem;
 	min-width: 150px;
-    max-width: 285px;
+	max-width: 285px;
 	width: 100%;
 }
 .searchButton {
@@ -26,4 +26,10 @@
 	color: var(--mainBackground);
 	height: 24px;
 	width: 24px;
+}
+
+@media (min-width: 800px) {
+	.form {
+		display: flex;
+	}
 }
