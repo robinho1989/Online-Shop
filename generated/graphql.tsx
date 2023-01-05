@@ -10730,7 +10730,7 @@ export enum _SystemDateTimeFieldVariation {
 export type GetProductsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetProductsQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', description: string, name: string, price: number, slug: string, images: Array<{ __typename?: 'Asset', fileName: string, url: string }> }> };
+export type GetProductsQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, description: string, name: string, price: number, slug: string, images: Array<{ __typename?: 'Asset', fileName: string, url: string }> }> };
 
 export type GetProductDetailsBySlugQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']>;
@@ -10743,6 +10743,7 @@ export type GetProductDetailsBySlugQuery = { __typename?: 'Query', products: Arr
 export const GetProductsDocument = gql`
     query GetProducts {
   products {
+    id
     description
     name
     price
