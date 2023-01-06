@@ -10,6 +10,6 @@ export default function ProductDetail() {
 			slug: productSlug,
 		},
 	});
-
+console.log(data)
 	return <p>Product slug: {productSlug}</p>;
 }
