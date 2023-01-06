@@ -20,7 +20,7 @@ export default function Home() {
 				};
 				
 				return (
-					<li key={item.name}>
+					<li key={item.id}>
 						<Product {...propsProduct} />
 						{/* <Link href={`${item.slug}`}>{item.name}</Link> */}
 					</li>

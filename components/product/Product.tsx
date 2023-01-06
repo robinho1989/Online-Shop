@@ -10,15 +10,14 @@ type ProductProps = {
 
 export const Product = ({ name, price, image, slug }: ProductProps) => {
 	return (
-		<article className={styles.productCard}>
-			<img src={image.url} alt={image.url} />
-			<div className={styles.productInfoContainer}>
-				<h3 className={styles.productName}>{name}</h3>
-				<p className={styles.productPrice}>{price}</p>
-				<Link href={slug} >
-					<button className={styles.addButton}>Add to basket</button>
-				</Link>
-			</div>
-		</article>
+		<Link href={slug}>
+			<article className={styles.productCard}>
+				<img src={image.url} alt={image.url} />
+				<div className={styles.productInfoContainer}>
+					<h3 className={styles.productName}>{name}</h3>
+					<p className={styles.productPrice}>{price}</p>
+				</div>
+			</article>
+		</Link>
 	);
 };
