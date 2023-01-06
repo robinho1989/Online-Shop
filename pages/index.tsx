@@ -10,7 +10,12 @@ export default function Home() {
 	return (
 		<ul>
 			{data?.products.map((item) => {
-				const propsProduct = { id: item.id };
+				const propsProduct = {
+					id: item.id,
+					name: item.name,
+					price: item.price,
+				};
+				console.log(propsProduct);
 				return (
 					<li key={item.name}>
 						<Link href={`${item.slug}`}>{item.name}</Link>
