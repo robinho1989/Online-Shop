@@ -13,6 +13,8 @@ query GetProducts {
 }
 query GetProductDetailsBySlug($slug: String) {
 	products(where: { slug: $slug }) {
+		id
+		description
 		name
 		price
 		images {
