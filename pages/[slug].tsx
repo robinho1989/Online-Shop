@@ -16,7 +16,10 @@ export default function ProductDetail() {
 	return (
 		<>
 			<article>
-				<img src={data?.products[0].images[0].url} alt='' />
+				<img
+					src={data?.products[0].images[0].url}
+					alt={data?.products[0].name}
+				/>
 				<div>
 					<h3>{data?.products[0].name}</h3>
 					<p>{data?.products[0].price}</p>
