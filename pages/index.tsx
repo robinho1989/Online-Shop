@@ -9,23 +9,28 @@ export default function Home() {
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error</p>;
 	return (
-		<ul>
-			{data?.products.map((item) => {
-				const propsProduct = {
-					id: item.id,
-					image: { url: item.images[0].url, alt: item.images[0].fileName },
-					name: item.name,
-					price: item.price,
-					slug:item.slug
-				};
-				
-				return (
-					<li key={item.id}>
-						<Product {...propsProduct} />
-						{/* <Link href={`${item.slug}`}>{item.name}</Link> */}
-					</li>
-				);
-			})}
-		</ul>
+		<section className={styles.productsContainer}>
+			<h2 className={styles.sectionHeading}>Produkty</h2>
+			<div className='wrapper'>
+				<ul className={styles.productsList}>
+					{data?.products.map((item) => {
+						const propsProduct = {
+							id: item.id,
+							image: { url: item.images[0].url, alt: item.images[0].fileName },
+							name: item.name,
+							price: item.price,
+							slug: item.slug,
+						};
+
+						return (
+							<li key={item.id} className={styles.productItem}>
+								<Product {...propsProduct} />
+								{/* <Link href={`${item.slug}`}>{item.name}</Link> */}
+							</li>
+						);
+					})}
+				</ul>
+			</div>
+		</section>
 	);
 }

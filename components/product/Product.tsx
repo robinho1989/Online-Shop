@@ -12,7 +12,7 @@ export const Product = ({ name, price, image, slug }: ProductProps) => {
 	return (
 		<Link href={slug}>
 			<article className={styles.productCard}>
-				<img src={image.url} alt={image.url} />
+				<img className={styles.productImage} src={image.url} alt={image.url} />
 				<div className={styles.productInfoContainer}>
 					<h3 className={styles.productName}>{name}</h3>
 					<p className={styles.productPrice}>{price}</p>
