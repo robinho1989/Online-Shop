@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
 import { useGetProductDetailsBySlugQuery } from '../generated/graphql';
+
+
 
 export default function ProductDetail() {
 	const router = useRouter();
@@ -29,6 +30,7 @@ export default function ProductDetail() {
 					<button>
 						<Link href={'/'}>Back</Link>
 					</button>
+					<button >Dodaj do koszyka</button>
 				</div>
 			</article>
 			<p>Product slug: {productSlug}</p>

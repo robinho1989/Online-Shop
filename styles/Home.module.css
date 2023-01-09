@@ -1,17 +1,20 @@
 .productsContainer {
-  background-color: var(--productsSectionBackground);
+	background-color: var(--productsSectionBackground);
 	padding: 2rem 1rem;
 }
 .productItem {
 	list-style: none;
+}
+.sectionHeading {
+	margin-bottom: 2rem;
+	text-align: center;
 }
 
 @media (min-width: 500px) {
 	.productsList {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-    
+		gap: 2rem;
 	}
 }
 

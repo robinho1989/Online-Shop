@@ -1,8 +1,18 @@
 .productCard{
+    border-radius: 10px;
     background-color: var(--mainBackground);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
     width: 100%;
 }
 .productImage{
   
     width: 100%;
+}
+
+@media(min-width:500px){
+    .productCard{
+        margin-bottom: 0;
+    }
 }

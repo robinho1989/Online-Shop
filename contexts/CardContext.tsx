@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 type Product = {
 	amount: number;
@@ -19,6 +20,7 @@ export const CardProvider = ({
 	children: React.ReactElement;
 }) => {
 	const [card, setCard] = useState([]);
+	
 	return (
 		<CardContext.Provider value={{ card }}>{children}</CardContext.Provider>
 	);

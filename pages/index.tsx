@@ -1,6 +1,4 @@
-import Link from 'next/link';
 import { Product } from '../components/product/Product';
-
 import { useGetProductsQuery } from '../generated/graphql';
 import styles from '../styles/Home.module.css';
 
@@ -25,7 +23,6 @@ export default function Home() {
 						return (
 							<li key={item.id} className={styles.productItem}>
 								<Product {...propsProduct} />
-								{/* <Link href={`${item.slug}`}>{item.name}</Link> */}
 							</li>
 						);
 					})}
