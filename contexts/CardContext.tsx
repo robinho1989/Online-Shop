@@ -8,7 +8,8 @@ type Product = {
 };
 type CardContext = {
 	card: Product[];
-	// addProduct: (id: string) => void;
+	initialValue:number
+	addProduct: (id: string) => void;
 };
 export const CardContext = React.createContext<CardContext | undefined>(
 	undefined
@@ -19,9 +20,17 @@ export const CardProvider = ({
 	children: React.ReactElement;
 }) => {
 	const [card, setCard] = useState<Product[]>([]);
-
+	const [initialValue, setInitialValue] = useState(0);
+	const addProduct = (id: string) => {
+		// if (card.find((product) => product.id === id)) {
+		// 	setInitialValue(initialValue + 1);
+		// }
+		setInitialValue(initialValue+1)
+	};
 	return (
-		<CardContext.Provider value={{ card }}>{children}</CardContext.Provider>
+		<CardContext.Provider value={{ card, addProduct,initialValue }}>
+			{children}
+		</CardContext.Provider>
 	);
 };
 

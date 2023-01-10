@@ -13,8 +13,8 @@ export default function ProductDetail() {
 		},
 	});
 
-	const { card } = useCardContext();
-	
+	const { card, addProduct, initialValue } = useCardContext();
+
 	return (
 		<>
 			<article>
@@ -31,7 +31,9 @@ export default function ProductDetail() {
 					<button>
 						<Link href={'/'}>Back</Link>
 					</button>
-					<button >Dodaj do koszyka</button>
+					<button onClick={() => addProduct}>
+						{`Dodaj do koszyka ${initialValue}`}
+					</button>
 				</div>
 			</article>
 			<p>Product slug: {productSlug}</p>
