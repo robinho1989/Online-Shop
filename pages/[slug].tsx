@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useGetProductDetailsBySlugQuery } from '../generated/graphql';
-
-
+import { useCardContext } from '../contexts/CardContext';
 
 export default function ProductDetail() {
 	const router = useRouter();
@@ -14,6 +13,8 @@ export default function ProductDetail() {
 		},
 	});
 
+	const { card } = useCardContext();
+	
 	return (
 		<>
 			<article>

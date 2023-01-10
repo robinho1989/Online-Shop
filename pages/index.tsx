@@ -7,6 +7,7 @@ export default function Home() {
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error</p>;
 	return (
+		
 		<section className={styles.productsContainer}>
 			<h2 className={styles.sectionHeading}>Produkty</h2>
 			<div className='wrapper'>
