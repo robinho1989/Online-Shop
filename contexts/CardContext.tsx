@@ -4,12 +4,11 @@ type Product = {
 	id: string;
 	name: string;
 	price: number;
-	image: { url: string; alt: string };
 };
 type CardContext = {
 	card: Product[];
-	initialValue:number
-	addProduct: (id: string) => void;
+
+	addProduct: (product: Product) => void;
 };
 export const CardContext = React.createContext<CardContext | undefined>(
 	undefined
@@ -19,16 +18,22 @@ export const CardProvider = ({
 }: {
 	children: React.ReactElement;
 }) => {
-	const [card, setCard] = useState<Product[]>([]);
-	const [initialValue, setInitialValue] = useState(0);
-	const addProduct = (id: string) => {
-		// if (card.find((product) => product.id === id)) {
-		// 	setInitialValue(initialValue + 1);
-		// }
-		setInitialValue(initialValue+1)
+	const [card, setCard] = useState<Product[] | []>([]);
+	const addProduct = (product: Product) => {
+		const existingItem = card.find((item) => item.id === product.id);
+		if (existingItem) {
+			const newOrder = card.map((item) => {
+				if (item.id === existingItem.id) {
+					return { ...item, amount: existingItem.amount + 1 };
+				}
+				return { ...item, amount: 0 };
+			});
+			return setCard(newOrder);
+		}
+		setCard((prev) => [...prev, { ...product, amount: 0 }]);
 	};
 	return (
-		<CardContext.Provider value={{ card, addProduct,initialValue }}>
+		<CardContext.Provider value={{ card, addProduct }}>
 			{children}
 		</CardContext.Provider>
 	);

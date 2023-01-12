@@ -12,8 +12,18 @@ export default function ProductDetail() {
 			slug: productSlug,
 		},
 	});
+	if (data === undefined) {
+		return <></>;
+	}
 
-	const { card, addProduct, initialValue } = useCardContext();
+	const { card, addProduct } = useCardContext();
+
+	const propsProduct = {
+		id: data.products[0].id,
+		amount: 0,
+		name: data.products[0].name,
+		price: data.products[0].price,
+	};
 
 	return (
 		<>
@@ -31,8 +41,10 @@ export default function ProductDetail() {
 					<button>
 						<Link href={'/'}>Back</Link>
 					</button>
-					<button onClick={() => addProduct}>
-						{`Dodaj do koszyka ${initialValue}`}
+					<button onClick={() => addProduct(propsProduct)}>
+						{`Dodaj do koszyka ${
+							card.find((product) => product.id === propsProduct.id)?.amount
+						}`}
 					</button>
 				</div>
 			</article>
