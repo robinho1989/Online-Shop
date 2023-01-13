@@ -7,7 +7,7 @@ type Product = {
 };
 type CardContext = {
 	card: Product[];
-
+	removeProduct: (product: Product) => void;
 	addProduct: (product: Product) => void;
 };
 export const CardContext = React.createContext<CardContext | undefined>(
@@ -26,14 +26,30 @@ export const CardProvider = ({
 				if (item.id === existingItem.id) {
 					return { ...item, amount: existingItem.amount + 1 };
 				}
-				return { ...item, amount: 0 };
+				return { ...item, amount: 1 };
 			});
 			return setCard(newOrder);
 		}
-		setCard((prev) => [...prev, { ...product, amount: 0 }]);
+		setCard((prev) => [...prev, { ...product, amount: 1 }]);
+	};
+	const removeProduct = (product: Product) => {
+		const existingItem = card.find((item) => item.id === product.id);
+		if (existingItem) {
+			const newOrder = card.map((item) => {
+				if (item.id === existingItem.id) {
+					if (existingItem.amount <= 0) {
+						existingItem.amount = 1;
+					}
+					return { ...item, amount: existingItem.amount - 1 };
+				}
+				return { ...item, amount: 1 };
+			});
+			return setCard(newOrder);
+		}
+		setCard((prev) => [...prev, { ...product, amount: 1 }]);
 	};
 	return (
-		<CardContext.Provider value={{ card, addProduct }}>
+		<CardContext.Provider value={{ card, addProduct, removeProduct }}>
 			{children}
 		</CardContext.Provider>
 	);

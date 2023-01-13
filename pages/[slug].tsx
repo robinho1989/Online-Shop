@@ -16,7 +16,7 @@ export default function ProductDetail() {
 		return <></>;
 	}
 
-	const { card, addProduct } = useCardContext();
+	const { card, addProduct, removeProduct } = useCardContext();
 
 	const propsProduct = {
 		id: data.products[0].id,
@@ -28,14 +28,11 @@ export default function ProductDetail() {
 	return (
 		<>
 			<article>
-				<img
-					src={data?.products[0].images[0].url}
-					alt={data?.products[0].name}
-				/>
+				<img src={data.products[0].images[0].url} alt={data.products[0].name} />
 				<div>
-					<h3>{data?.products[0].name}</h3>
-					<p>{data?.products[0].price}</p>
-					<p>{data?.products[0].description}</p>
+					<h3>{data.products[0].name}</h3>
+					<p>{data.products[0].price}</p>
+					<p>{data.products[0].description}</p>
 				</div>
 				<div>
 					<button>
@@ -45,6 +42,9 @@ export default function ProductDetail() {
 						{`Dodaj do koszyka ${
 							card.find((product) => product.id === propsProduct.id)?.amount
 						}`}
+					</button>
+					<button onClick={() => removeProduct(propsProduct)}>
+						Usuń z koszyka
 					</button>
 				</div>
 			</article>
