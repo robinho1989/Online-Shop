@@ -1,0 +1,19 @@
+.productImage {
+	width: 100%;
+}
+.productTextContainer {
+	text-align: center;
+}
+.productView {
+    background-color: var(--mainBackground);
+    border-radius: 10px;
+	min-width: 250px;
+	max-width: 600px;
+	width: 100%;
+}
+.productSection {
+	background-color: var(--productsSectionBackground);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
