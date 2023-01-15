@@ -1,12 +1,37 @@
+.buttonsContainer {
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+}
+.buttonsContainer :is(button) {
+	background-color: var(--logoMainColor);
+	border: none;
+	border-radius: 5px;
+	color: var(--mainBackground);
+	cursor: pointer;
+	font-size: 1.6rem;
+	margin-top: 1rem;
+	padding: 1rem;
+}
+.productHeading {
+	font-size: 2rem;
+}
+.productTextContainer :is(h3, p) {
+	margin-bottom: 1rem;
+}
+.descriptionContainer {
+	padding: 0 1rem 1rem 1rem;
+}
 .productImage {
+	object-fit: cover;
 	width: 100%;
 }
 .productTextContainer {
 	text-align: center;
 }
 .productView {
-    background-color: var(--mainBackground);
-    border-radius: 10px;
+	background-color: var(--mainBackground);
+	border-radius: 10px;
 	min-width: 250px;
 	max-width: 600px;
 	width: 100%;
@@ -16,4 +41,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+	.descriptionContainer {
+		padding: 0 2rem 2rem 2rem;
+	}
 }

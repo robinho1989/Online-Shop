@@ -22,30 +22,32 @@ export const ProductView = (product: ProductViewProps) => {
 					src={product.image}
 					alt={product.alt}
 				/>
-				<div className={styles.productTextContainer}>
-					<h3 className={styles.productHeading}>{product.name}</h3>
-					<p className={styles.productPrice}>{product.price}</p>
-					<p className={styles.productDescription}>{product.description}</p>
-				</div>
-				<div className={styles.buttonsContainer}>
-					<button>
-						<Link href={'/'}>Powrót</Link>
-					</button>
+				<div className={styles.descriptionContainer}>
+					<div className={styles.productTextContainer}>
+						<h3 className={styles.productHeading}>{product.name}</h3>
+						<p className={styles.productPrice}>{product.price}</p>
+						<p className={styles.productDescription}>{product.description}</p>
+					</div>
+					<div className={styles.buttonsContainer}>
+						<button>
+							<Link href={'/'}>Powrót</Link>
+						</button>
 
-					<button
-						onClick={() => addProduct(product)}
-						className={styles.productAddButton}
-					>
-						{`Dodaj do koszyka ${
-							card.find((item) => item.id === product.id)?.amount
-						}`}
-					</button>
-					<button
-						onClick={() => removeProduct(product)}
-						className={styles.productRemoveButton}
-					>
-						Usuń z koszyka
-					</button>
+						<button
+							onClick={() => addProduct(product)}
+							className={styles.productAddButton}
+						>
+							{`Dodaj do koszyka ${
+								card.find((item) => item.id === product.id)?.amount
+							}`}
+						</button>
+						<button
+							onClick={() => removeProduct(product)}
+							className={styles.productRemoveButton}
+						>
+							Usuń z koszyka
+						</button>
+					</div>
 				</div>
 			</article>
 		</section>
