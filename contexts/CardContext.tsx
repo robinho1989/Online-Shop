@@ -39,12 +39,14 @@ export const CardProvider = ({
 				if (item.id === existingItem.id) {
 					if (existingItem.amount <= 0) {
 						existingItem.amount = 1;
+					
 					}
 					return { ...item, amount: existingItem.amount - 1 };
 				}
 				return { ...item, amount: 1 };
 			});
-			return setCard(newOrder);
+			const removedItems=newOrder.filter(product=>product.amount!==0)
+			return setCard(removedItems);
 		}
 		setCard((prev) => [...prev, { ...product, amount: 1 }]);
 	};
