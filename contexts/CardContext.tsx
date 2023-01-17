@@ -26,7 +26,7 @@ export const CardProvider = ({
 				if (item.id === existingItem.id) {
 					return { ...item, amount: existingItem.amount + 1 };
 				}
-				return { ...item, amount: 1 };
+				return { ...item, amount: item.amount };
 			});
 			return setCard(newOrder);
 		}
@@ -43,7 +43,7 @@ export const CardProvider = ({
 					}
 					return { ...item, amount: existingItem.amount - 1 };
 				}
-				return { ...item, amount: 1 };
+				return { ...item, amount: item.amount };
 			});
 			const removedItems=newOrder.filter(product=>product.amount!==0)
 			return setCard(removedItems);
