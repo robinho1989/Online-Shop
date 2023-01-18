@@ -17,7 +17,7 @@ export const ProductView = (product: ProductViewProps) => {
 	const amountProdcutInCart = card.find(
 		(item) => item.id === product.id
 	)?.amount;
-	console.log(card);
+
 	return (
 		<section className={styles.productSection}>
 			<article className={styles.productView}>
@@ -33,9 +33,7 @@ export const ProductView = (product: ProductViewProps) => {
 						<p className={styles.productDescription}>{product.description}</p>
 					</div>
 					<div className={styles.buttonsContainer}>
-						<button>
-							<Link href={'/'}>Powrót</Link>
-						</button>
+						<Link href={'/'}>Powrót</Link>
 
 						<button
 							onClick={() => addProduct(product)}

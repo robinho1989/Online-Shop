@@ -8,6 +8,7 @@ import {
 	FaShuttleVan,
 	FaTimes,
 } from 'react-icons/fa';
+import { headerLinks } from './constants';
 import { GiReturnArrow } from 'react-icons/gi';
 import { HamburgerButton } from '../hamburgerButton/HamburgerButton';
 import { Logo } from '../logo/Logo';
@@ -35,26 +36,13 @@ export const Header = () => {
 								<FaSearch className={styles.searchButtonIcon} />
 							</button>
 							<ul className={styles.mobileAnchorLinkList}>
-								<li className={styles.anchorLink}>
-									<Link href={''}>
-										<FaPhone className={styles.anchorIcon} />
-									</Link>
-								</li>
-								<li className={styles.anchorLink}>
-									<Link href={''}>
-										<FaHeart className={styles.anchorIcon} />
-									</Link>
-								</li>
-								<li className={styles.anchorLink}>
-									<Link href={''}>
-										<FaUser className={styles.anchorIcon} />
-									</Link>
-								</li>
-								<li className={styles.anchorLink}>
-									<Link href={''}>
-										<FaShoppingBasket className={styles.anchorIcon} />
-									</Link>
-								</li>
+								{headerLinks.map(({ Icon, href }) => (
+									<li key={href} className={styles.anchorLink}>
+										<Link href={href}>
+											<Icon className={styles.anchorIcon} />
+										</Link>
+									</li>
+								))}
 							</ul>
 						</div>
 					</div>

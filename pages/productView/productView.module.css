@@ -3,15 +3,17 @@
 	flex-direction: column;
 	margin-top: 1rem;
 }
-.buttonsContainer :is(button) {
+.buttonsContainer :is(button, a) {
 	background-color: var(--logoMainColor);
 	border: none;
 	border-radius: 5px;
 	color: var(--mainBackground);
 	cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1.6rem;
 	margin-top: 1rem;
 	padding: 1rem;
+	text-align: center;
 }
 .productHeading {
 	font-size: 2rem;
