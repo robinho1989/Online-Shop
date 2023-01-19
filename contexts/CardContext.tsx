@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 type Product = {
 	amount: number;
 	id: string;
@@ -19,6 +19,14 @@ export const CardProvider = ({
 	children: React.ReactElement;
 }) => {
 	const [card, setCard] = useState<Product[] | []>([]);
+	useEffect(() => {
+		const cardFromLocalstorage = localStorage.getItem('card');
+		setCard(() => JSON.parse(cardFromLocalstorage ?? '[]'));
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem('card', JSON.stringify(card));
+	}, [card]);
 	const addProduct = (product: Product) => {
 		const existingItem = card.find((item) => item.id === product.id);
 		if (existingItem) {
@@ -39,13 +47,12 @@ export const CardProvider = ({
 				if (item.id === existingItem.id) {
 					if (existingItem.amount <= 0) {
 						existingItem.amount = 1;
-					
 					}
 					return { ...item, amount: existingItem.amount - 1 };
 				}
 				return { ...item, amount: item.amount };
 			});
-			const removedItems=newOrder.filter(product=>product.amount!==0)
+			const removedItems = newOrder.filter((product) => product.amount !== 0);
 			return setCard(removedItems);
 		}
 		setCard((prev) => [...prev, { ...product, amount: 1 }]);

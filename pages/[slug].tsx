@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useGetProductDetailsBySlugQuery } from '../generated/graphql';
-import { ProductView } from './productView/ProductView';
+import { ProductView } from '../views/productView/ProductView';
 
 export default function ProductDetail() {
 	const router = useRouter();
