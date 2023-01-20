@@ -40,6 +40,19 @@ export const CardProvider = ({
 		}
 		setCard((prev) => [...prev, { ...product, amount: 1 }]);
 	};
+	// const newFunction = (state: Product[], product: Product) => {
+	// 	const existingItem = state.find((item) => item.id === product.id);
+	// 	if (existingItem) {
+	// 		const newOrder = state.map((item) => {
+	// 			if (item.id === existingItem.id) {
+	// 				return { ...item, amount: existingItem.amount + 1 };
+	// 			}
+	// 			return { ...item, amount: item.amount };
+	// 		});
+	// 		return setCard(newOrder);
+	// 	}
+	// 	setCard((prev) => [...prev, { ...product, amount: 1 }]);
+	// };
 	const removeProduct = (product: Product) => {
 		const existingItem = card.find((item) => item.id === product.id);
 		if (existingItem) {
@@ -55,7 +68,7 @@ export const CardProvider = ({
 			const removedItems = newOrder.filter((product) => product.amount !== 0);
 			return setCard(removedItems);
 		}
-		setCard((prev) => [...prev, { ...product, amount: 1 }]);
+		setCard((prev) => [...prev, { ...product }]);
 	};
 	return (
 		<CardContext.Provider value={{ card, addProduct, removeProduct }}>
