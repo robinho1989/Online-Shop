@@ -1,5 +1,6 @@
 import styles from './productView.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCardContext } from '../../contexts/CardContext';
 
 type ProductViewProps = {
@@ -21,10 +22,17 @@ export const ProductView = (product: ProductViewProps) => {
 	return (
 		<section className={styles.productSection}>
 			<article className={styles.productView}>
-				<img
+				<Image
 					className={styles.productImage}
 					src={product.image}
 					alt={product.alt}
+					height={600}
+					width={600}
+					sizes='100vw'
+					style={{
+						width: '100%',
+						height: 'auto',
+					}}
 				/>
 				<div className={styles.descriptionContainer}>
 					<div className={styles.productTextContainer}>
