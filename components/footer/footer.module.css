@@ -1,0 +1,40 @@
+.expandableMenuContainer {
+	display: flex;
+	justify-content: space-between;
+}
+.footerContainer {
+	display: flex;
+	flex-direction: column;
+
+	padding: 2rem 1rem;
+}
+.footerNavList {
+	display: none;
+}
+.footerNavListActive {
+	display: block;
+	
+}
+.footerNavItem {
+	list-style: none;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+.inputContainer {
+	display: flex;
+	flex-direction: column;
+}
+.socialIconsList {
+	display: flex;
+	list-style: none;
+}
+
+@media (min-width: 900px) {
+	.footerContainer {
+		padding: 2rem 1.5rem;
+	}
+}
+
+
+
