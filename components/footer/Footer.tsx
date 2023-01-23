@@ -55,13 +55,14 @@ export const Footer = () => {
 						</ul>
 					</nav>
 					<form className={styles.newsletterContainer}>
-						<label htmlFor='newsletter'>Zapisz się na nasz newsletter</label>
+						<label className={styles.formLabel} htmlFor='newsletter'>Zapisz się na nasz newsletter</label>
 						<div className={styles.inputContainer}>
 							<input
 								className={styles.newsletterInput}
 								type='email'
 								name='newsletter'
 								id='newsletter'
+								placeholder='Twój e-mail'
 							/>
 							<button className={styles.newsletterButton}>Zapisz</button>
 						</div>

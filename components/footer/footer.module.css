@@ -1,6 +1,17 @@
+.expandableMenuButton {
+	background-color: var(--logoMainColor);
+	border: none;
+	border-radius: 7px;
+	color: var(--mainBackground);
+	display: inline-block;
+	font-size: 1.6rem;
+	padding: 0.8rem 1.5rem;
+}
 .expandableMenuContainer {
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
+	padding: 1rem 0;
 }
 .footerContainer {
 	display: flex;
@@ -8,25 +19,53 @@
 
 	padding: 2rem 1rem;
 }
+.footerNav{
+	margin-bottom: 3rem;
+}
 .footerNavList {
 	display: none;
 }
 .footerNavListActive {
 	display: block;
-	
 }
 .footerNavItem {
+	border-bottom: solid 1px var(--footerLinksBorder);
 	list-style: none;
-	margin-bottom: 1rem;
+
+	padding: 1rem 0;
 	width: 100%;
 }
 
+
 .inputContainer {
+	border: solid 1px var(--footerLinksBorder);
 	display: flex;
-	flex-direction: column;
+	border-radius: 7px;
+	overflow: hidden;
+	margin-top: 1rem;
+}
+
+.newsletterButton {
+	background-color: var(--logoMainColor);
+	border: none;
+	color: var(--mainBackground);
+	display: inline-block;
+	font-size: 1.6rem;
+	padding: 0.8rem 1.5rem;
+}
+.newsletterInput {
+	border: 1px solid transparent;
+	flex: 3;
+	font-size: 1.6rem;
+	outline: none;
+	padding: 0.8rem 0;
+}
+.socialIcons {
+	margin: 1rem 0;
 }
 .socialIconsList {
 	display: flex;
+	justify-content: space-between;
 	list-style: none;
 }
 
@@ -35,6 +74,3 @@
 		padding: 2rem 1.5rem;
 	}
 }
-
-
-
