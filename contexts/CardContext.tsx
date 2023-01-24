@@ -53,6 +53,7 @@ export const CardProvider = ({
 	// 	}
 	// 	setCard((prev) => [...prev, { ...product, amount: 1 }]);
 	// };
+
 	const removeProduct = (product: Product) => {
 		const existingItem = card.find((item) => item.id === product.id);
 		if (existingItem) {

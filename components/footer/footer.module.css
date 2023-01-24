@@ -1,8 +1,14 @@
+.copyrightContainer {
+	background-color: var(--productsSectionBackground);
+	padding: 2rem 0;
+	text-align: center;
+}
 .expandableMenuButton {
 	background-color: var(--logoMainColor);
 	border: none;
 	border-radius: 7px;
 	color: var(--mainBackground);
+	cursor: pointer;
 	display: inline-block;
 	font-size: 1.6rem;
 	padding: 0.8rem 1.5rem;
@@ -19,7 +25,7 @@
 
 	padding: 2rem 1rem;
 }
-.footerNav{
+.footerNav {
 	margin-bottom: 3rem;
 }
 .footerNavList {
@@ -36,19 +42,19 @@
 	width: 100%;
 }
 
-
 .inputContainer {
 	border: solid 1px var(--footerLinksBorder);
 	display: flex;
 	border-radius: 7px;
 	overflow: hidden;
-	margin-top: 1rem;
+	margin: 1.5rem 0;
 }
 
 .newsletterButton {
 	background-color: var(--logoMainColor);
 	border: none;
 	color: var(--mainBackground);
+	cursor: pointer;
 	display: inline-block;
 	font-size: 1.6rem;
 	padding: 0.8rem 1.5rem;
@@ -58,7 +64,7 @@
 	flex: 3;
 	font-size: 1.6rem;
 	outline: none;
-	padding: 0.8rem 0;
+	padding: 0.8rem;
 }
 .socialIcons {
 	margin: 1rem 0;
@@ -69,6 +75,28 @@
 	list-style: none;
 }
 
+@media (min-width: 750px) {
+	.copyrightContainer {
+		background-color: var(--productsSectionBackground);
+		text-align: center;
+	}
+	.expandableMenuButton {
+		display: none;
+	}
+	.expandableMenuContainer {
+		padding-top: 0;
+	}
+	.footerContainer {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.footerNavItem {
+		border-bottom: none;
+	}
+	.footerNavList {
+		display: block;
+	}
+}
 @media (min-width: 900px) {
 	.footerContainer {
 		padding: 2rem 1.5rem;

@@ -1,17 +1,23 @@
 import Link from 'next/link';
 import styles from './footer.module.css';
 import { useState } from 'react';
+import { FooterLogo } from './FooterLogo';
+import { stringify } from 'querystring';
 
 export const Footer = () => {
 	const [clicked, setClicked] = useState(false);
 	const expandableMenu = () => {
 		setClicked((clicked) => !clicked);
 	};
-	
+	const date = new Date();
+	const year = date.getFullYear();
+	const yearInString = year.toString();
+
 	return (
 		<footer className={styles.footer}>
 			<div className='wrapper'>
 				<div className={styles.footerContainer}>
+					<FooterLogo />
 					<nav className={styles.footerNav}>
 						<div className={styles.expandableMenuContainer}>
 							<h3>Obsługa klienta</h3>
@@ -55,7 +61,9 @@ export const Footer = () => {
 						</ul>
 					</nav>
 					<form className={styles.newsletterContainer}>
-						<label className={styles.formLabel} htmlFor='newsletter'>Zapisz się na nasz newsletter</label>
+						<label className={styles.formLabel} htmlFor='newsletter'>
+							Zapisz się na nasz newsletter
+						</label>
 						<div className={styles.inputContainer}>
 							<input
 								className={styles.newsletterInput}
@@ -81,6 +89,11 @@ export const Footer = () => {
 						</div>
 					</form>
 				</div>
+			</div>
+			<div className={styles.copyrightContainer}>
+				<p className={styles.copyrightParagraph}>
+					{`MyOnlineShop ${yearInString} . All rights reserved.`}
+				</p>
 			</div>
 		</footer>
 	);
