@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Product } from '../components/product/Product';
 type Product = {
 	amount: number;
 	id: string;
@@ -6,7 +7,7 @@ type Product = {
 	price: number;
 };
 type CardContext = {
-	card: Product[];
+	card: Product[]|undefined;
 	removeProduct: (product: Product) => void;
 	addProduct: (product: Product) => void;
 };
@@ -18,16 +19,23 @@ export const CardProvider = ({
 }: {
 	children: React.ReactElement;
 }) => {
-	const [card, setCard] = useState<Product[] | []>([]);
+	const [card, setCard] = useState<Product[] | undefined>(undefined);
+
 	useEffect(() => {
 		const cardFromLocalstorage = localStorage.getItem('card');
 		setCard(() => JSON.parse(cardFromLocalstorage ?? '[]'));
 	}, []);
 
 	useEffect(() => {
+		if (card === undefined) {
+			return;
+		}
 		localStorage.setItem('card', JSON.stringify(card));
 	}, [card]);
 	const addProduct = (product: Product) => {
+		if(card===undefined){
+			return [product]
+		}
 		const existingItem = card.find((item) => item.id === product.id);
 		if (existingItem) {
 			const newOrder = card.map((item) => {
@@ -40,10 +48,10 @@ export const CardProvider = ({
 		}
 		setCard((prev) => [...prev, { ...product, amount: 1 }]);
 	};
-	// const newFunction = (state: Product[], product: Product) => {
-	// 	const existingItem = state.find((item) => item.id === product.id);
+	// const newFunction = (product: Product) => {
+	// 	const existingItem = card.find((item) => item.id === product.id);
 	// 	if (existingItem) {
-	// 		const newOrder = state.map((item) => {
+	// 		const newOrder = card.map((item) => {
 	// 			if (item.id === existingItem.id) {
 	// 				return { ...item, amount: existingItem.amount + 1 };
 	// 			}
@@ -51,10 +59,12 @@ export const CardProvider = ({
 	// 		});
 	// 		return setCard(newOrder);
 	// 	}
-	// 	setCard((prev) => [...prev, { ...product, amount: 1 }]);
 	// };
 
 	const removeProduct = (product: Product) => {
+		if(card===undefined){
+			return [product]
+		}
 		const existingItem = card.find((item) => item.id === product.id);
 		if (existingItem) {
 			const newOrder = card.map((item) => {

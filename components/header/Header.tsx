@@ -21,6 +21,7 @@ export const Header = () => {
 	const handleOpenMobileNav = () => {
 		setIsopen((open) => !open);
 	};
+
 	return (
 		<header className={styles.header}>
 			<div className='wrapper'>
