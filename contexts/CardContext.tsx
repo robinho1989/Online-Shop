@@ -28,7 +28,7 @@ export const CardProvider = ({
 
 	useEffect(() => {
 		if (card === undefined) {
-			return;
+			return ;
 		}
 		localStorage.setItem('card', JSON.stringify(card));
 	}, [card]);
@@ -46,7 +46,7 @@ export const CardProvider = ({
 			});
 			return setCard(newOrder);
 		}
-		setCard((prev) => [...prev, { ...product, amount: 1 }]);
+		// setCard((prev) => [...prev, { ...product, amount: 1 }]);
 	};
 	// const newFunction = (product: Product) => {
 	// 	const existingItem = card.find((item) => item.id === product.id);
@@ -79,7 +79,7 @@ export const CardProvider = ({
 			const removedItems = newOrder.filter((product) => product.amount !== 0);
 			return setCard(removedItems);
 		}
-		setCard((prev) => [...prev, { ...product }]);
+		// setCard((prev) => [...prev, { ...product }]);
 	};
 	return (
 		<CardContext.Provider value={{ card, addProduct, removeProduct }}>
