@@ -13,14 +13,29 @@ import { GiReturnArrow } from 'react-icons/gi';
 import { HamburgerButton } from '../hamburgerButton/HamburgerButton';
 import { Logo } from '../logo/Logo';
 import { SearchInput } from '../serachInput/SearchInput';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import styles from './header.module.css';
+import { useCardContext } from '../../contexts/CardContext';
 
 export const Header = () => {
 	const [open, setIsopen] = useState(false);
 	const handleOpenMobileNav = () => {
 		setIsopen((open) => !open);
 	};
+	const { card } = useCardContext();
+	const productsAmount = useMemo(() => {
+		const productsInBasket = card?.reduce(function (
+			accumulator,
+			previousValue
+		) {
+			return accumulator + previousValue.amount;
+		},
+		0);
+		return productsInBasket;
+	}, [card]);
+	if (productsAmount === undefined) {
+		return;
+	}
 
 	return (
 		<header className={styles.header}>
@@ -70,8 +85,8 @@ export const Header = () => {
 							</div>
 						</button>
 						<button className={styles.shoppingBasket}>
-							<FaShoppingBasket className={styles.shoppingBasketIcon} />{' '}
-							Koszyk(0)
+							<FaShoppingBasket className={styles.shoppingBasketIcon} /> Koszyk(
+							{productsAmount})
 						</button>
 					</div>
 				</div>
