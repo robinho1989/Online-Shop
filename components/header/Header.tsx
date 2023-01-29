@@ -33,9 +33,6 @@ export const Header = () => {
 		0);
 		return productsInBasket;
 	}, [card]);
-	if (productsAmount === undefined) {
-		return;
-	}
 
 	return (
 		<header className={styles.header}>

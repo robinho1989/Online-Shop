@@ -15,10 +15,8 @@ type ProductViewProps = {
 
 export const ProductView = (product: ProductViewProps) => {
 	const { card, addProduct, removeProduct } = useCardContext();
-	if(card===undefined){
-		return card
-	}
-	const amountProdcutInCart = card.find(
+	
+	const amountProdcutInCart = card?.find(
 		(item) => item.id === product.id
 	)?.amount;
 
