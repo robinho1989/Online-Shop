@@ -33,62 +33,23 @@ export const CardProvider = ({
 		localStorage.setItem('card', JSON.stringify(card));
 	}, [card]);
 
-	// const addProduct = (product: Product) => {
-	// 	if(card===undefined){
-	// 		return [product]
-	// 	}
-	// 	const existingItem = card.find((item) => item.id === product.id);
-	// 	if (existingItem) {
-	// 		const newOrder = card.map((item) => {
-	// 			if (item.id === existingItem.id) {
-	// 				return { ...item, amount: existingItem.amount + 1 };
-	// 			}
-	// 			return { ...item, amount: item.amount };
-	// 		});
-	// 		return setCard(newOrder);
-	// 	}
-	// 	setCard((prev) => [...prev, { ...product, amount: 1 }]);
-	// };
-	// const newFunction = (product: Product) => {
-	// 	const existingItem = card.find((item) => item.id === product.id);
-	// 	if (existingItem) {
-	// 		const newOrder = card.map((item) => {
-	// 			if (item.id === existingItem.id) {
-	// 				return { ...item, amount: existingItem.amount + 1 };
-	// 			}
-	// 			return { ...item, amount: item.amount };
-	// 		});
-	// 		return setCard(newOrder);
-	// 	}
-	// };
+	const validateCard = (card: Product[] | undefined) => {
+		card?.map((product) => {
+			if (product.amount > 3) {
+				setCard([]);
+			} else {
+				setCard([...card]);
+			}
+		});
+	};
 
-	// const removeProduct = (product: Product) => {
-	// 	if (card === undefined) {
-	// 		return [product];
-	// 	}
-	// 	const existingItem = card.find((item) => item.id === product.id);
-	// 	if (existingItem) {
-	// 		const newOrder = card.map((item) => {
-	// 			if (item.id === existingItem.id) {
-	// 				if (existingItem.amount <= 0) {
-	// 					existingItem.amount = 1;
-	// 				}
-	// 				return { ...item, amount: existingItem.amount - 1 };
-	// 			}
-	// 			return { ...item, amount: item.amount };
-	// 		});
-	// 		const removedItems = newOrder.filter((product) => product.amount !== 0);
-	// 		return setCard(removedItems);
-	// 	}
-	// 	setCard((prev) => [...prev, { ...product }]);
-	// };
 	return (
 		<CardContext.Provider
 			value={{
 				card,
 				addProduct: (product: Product) => {
 					setCard(addProductToCard(card, product));
-					console.log(addProductToCard(card, product))
+					console.log(addProductToCard(card, product));
 				},
 				removeProduct: (product: Product) => {
 					setCard(removeProductFromCard(card, product));

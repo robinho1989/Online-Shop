@@ -83,7 +83,7 @@ export const Header = () => {
 						</button>
 						<button className={styles.shoppingBasket}>
 							<FaShoppingBasket className={styles.shoppingBasketIcon} /> Koszyk(
-							{productsAmount})
+							{`${productsAmount ?? 0}`})
 						</button>
 					</div>
 				</div>

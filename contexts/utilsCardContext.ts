@@ -4,7 +4,6 @@ export const addProductToCard = (
 	card: Product[] | undefined,
 	product: Product
 ) => {
-
 	const existingItem = card?.find((item) => item.id === product.id);
 	if (existingItem) {
 		const newOrder = card?.map((item) => {
@@ -15,15 +14,10 @@ export const addProductToCard = (
 		});
 		return newOrder;
 	}
-    return [product];
-//     if(!card){
-//         return[]
-//     }
-// return [...card,{...product}]
-    // Mam problem z dodawaniem produktów, po pierwsze gdy dodaje to zaczyna od zera, a po drugie gdy chce dodać inny produkt to kasuje mi poprzedni z tablicy i zmienia tylko ten, który dodaje. W pliku CardContext dodałem consol.log, żebyś mogł zobaczyć o co mi chodzi :) Wiem, że to przerabialiśmy na lekcji ale wydaje mi się że kod jest przktycznie taki sam. Próbowałem jeszcze w ostatnim returnie zapisu, który zakomentowałem (linijka 19-22). Teraz dodaje już produkty i dostaję już listę obiektów z różnymi produktami ale wyskakuje kolejny problem. Kiedy chce dodać produkt to muszę klinknąć dwa razy, żeby mi pokazało że jest jeden produkt w koszyku. Świadomy jestem, że jest to spowodowane tym zapisem:   if(!card){
-//         return[]
-//     }
-// Chciałem jakoś zabezpieczyć wartość 'card' bo była undefined hehe. I przyznam szczerze, że nie wiem jak wybrnąć z tej sytuacji :)
+	if (!card) {
+		return [product];
+	}
+	return [...card, { ...product }];
 };
 export const removeProductFromCard = (
 	card: Product[] | undefined,

@@ -15,7 +15,7 @@ type ProductViewProps = {
 
 export const ProductView = (product: ProductViewProps) => {
 	const { card, addProduct, removeProduct } = useCardContext();
-	
+
 	const amountProdcutInCart = card?.find(
 		(item) => item.id === product.id
 	)?.amount;
@@ -45,7 +45,7 @@ export const ProductView = (product: ProductViewProps) => {
 						<Link href={'/'}>Powrót</Link>
 
 						<button
-							onClick={() => addProduct(product)}
+							onClick={() => addProduct({ ...product, amount: 1 })}
 							className={styles.productAddButton}
 						>
 							{`Dodaj do koszyka ${amountProdcutInCart ?? '0'}`}
