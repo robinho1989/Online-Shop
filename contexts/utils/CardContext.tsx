@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import { addProductToCard, removeProductFromCard } from './utilsCardContext';
 type Product = {
 	amount: number;
@@ -33,23 +34,12 @@ export const CardProvider = ({
 		localStorage.setItem('card', JSON.stringify(card));
 	}, [card]);
 
-	const validateCard = (card: Product[] | undefined) => {
-		card?.map((product) => {
-			if (product.amount > 3) {
-				setCard([]);
-			} else {
-				setCard([...card]);
-			}
-		});
-	};
-
 	return (
 		<CardContext.Provider
 			value={{
 				card,
 				addProduct: (product: Product) => {
 					setCard(addProductToCard(card, product));
-					console.log(addProductToCard(card, product));
 				},
 				removeProduct: (product: Product) => {
 					setCard(removeProductFromCard(card, product));

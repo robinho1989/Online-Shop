@@ -1,7 +1,7 @@
 import styles from './productView.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useCardContext } from '../../contexts/CardContext';
+import { useCardContext } from '../../contexts/utils/CardContext';
 
 type ProductViewProps = {
 	alt: string;

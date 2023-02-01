@@ -15,7 +15,7 @@ import { Logo } from '../logo/Logo';
 import { SearchInput } from '../serachInput/SearchInput';
 import { useMemo, useState } from 'react';
 import styles from './header.module.css';
-import { useCardContext } from '../../contexts/CardContext';
+import { useCardContext } from '../../contexts/utils/CardContext';
 
 export const Header = () => {
 	const [open, setIsopen] = useState(false);

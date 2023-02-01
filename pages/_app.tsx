@@ -3,7 +3,7 @@ import { client } from '../graphql/apollo-client';
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Layout } from '../components/layout/Layout';
-import { CardProvider } from '../contexts/CardContext';
+import { CardProvider } from '../contexts/utils/CardContext';
 import { Open_Sans } from '@next/font/google';
 
 const inter = Open_Sans();

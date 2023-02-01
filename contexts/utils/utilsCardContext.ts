@@ -1,4 +1,17 @@
 import { Product } from './types';
+import * as yup from 'yup';
+
+export const productValidation = (card: Product[] | undefined) => {
+	const validationSchema = yup.object().shape({ amount: yup.number().max(10) });
+	const validateCard = card?.map((item) => {
+		if (validationSchema.validateSync({ amount: item.amount })) {
+			return { ...item };
+		} else {
+			return { ...item, amount: 0 };
+		}
+	});
+	return validateCard;
+};
 
 export const addProductToCard = (
 	card: Product[] | undefined,
