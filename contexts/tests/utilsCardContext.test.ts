@@ -1,7 +1,8 @@
-import { generateProduct } from '../../mocks/product';
+import { generateProduct, generateProductToFilter } from '../../mocks/product';
 import {
 	addProductToCard,
 	removeProductFromCard,
+	productValidation,
 } from '../utils/utilsCardContext';
 
 describe('Functionality of card', () => {
@@ -19,5 +20,12 @@ describe('Functionality of card', () => {
 			price: 2000,
 		});
 		expect(cardWithProduct?.length).toBe(stateCard.length + 1);
+	});
+	it('Filter a card by amount of products', () => {
+		const stateCard = Array.from({ length: 10 }, () =>
+			generateProductToFilter()
+		);
+		const filteredCard = productValidation(stateCard);
+		expect(filteredCard?.length).toBe(0);
 	});
 });

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { addProductToCard, removeProductFromCard } from './utilsCardContext';
+import {
+	addProductToCard,
+	removeProductFromCard,
+	productValidation,
+} from './utilsCardContext';
 type Product = {
 	amount: number;
 	id: string;
@@ -21,11 +25,14 @@ export const CardProvider = ({
 	children: React.ReactElement;
 }) => {
 	const [card, setCard] = useState<Product[] | undefined>(undefined);
-
+	console.log(productValidation(card));
 	useEffect(() => {
 		const cardFromLocalstorage = localStorage.getItem('card');
-		if (cardFromLocalstorage) {
-			setCard(() => JSON.parse(cardFromLocalstorage ?? '[]'));
+		const parsedCardFromLocalStorage: Product[] | [] = JSON.parse(
+			cardFromLocalstorage ?? '[]'
+		);
+		if (parsedCardFromLocalStorage) {
+			setCard(() => productValidation(parsedCardFromLocalStorage));
 		}
 	}, []);
 

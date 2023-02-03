@@ -7,3 +7,10 @@ export const generateProduct = (): Product => ({
 	price: Number(faker.commerce.price()),
 	amount: 1,
 });
+
+export const generateProductToFilter=():Product=>({
+	id:faker.datatype.uuid(),
+	name: faker.commerce.productName(),
+	price: Number(faker.commerce.price()),
+	amount: 13,
+})
