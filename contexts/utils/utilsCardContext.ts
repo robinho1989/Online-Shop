@@ -1,12 +1,11 @@
+import { validationSchema } from '../../schema/schema';
 import { Product } from './types';
-import * as yup from 'yup';
 
 export const productValidation = (card: Product[] | undefined) => {
-	const validationSchema = yup.object().shape({ amount: yup.number().max(10) });
 	const validateCard = card?.filter((item) => {
 		if (validationSchema.isValidSync({ amount: item.amount })) {
 			return { ...item };
-		} 
+		}
 	});
 	return validateCard;
 };
