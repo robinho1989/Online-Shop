@@ -81,10 +81,13 @@ export const Header = () => {
 								</p>
 							</div>
 						</button>
-						<button className={styles.shoppingBasket}>
+						<Link
+							href={'/basket'}
+							className={styles.shoppingBasket}
+						>
 							<FaShoppingBasket className={styles.shoppingBasketIcon} /> Koszyk(
 							{`${productsAmount ?? 0}`})
-						</button>
+						</Link>
 					</div>
 				</div>
 
