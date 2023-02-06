@@ -14,9 +14,13 @@ export const addProductToCard = (
 	card: Product[] | undefined,
 	product: Product
 ) => {
-	const existingItem = card?.find((item) => item.id === product.id);
+	const filterdCardByAmout = productValidation(card);
+
+	const existingItem = filterdCardByAmout?.find(
+		(item) => item.id === product.id
+	);
 	if (existingItem) {
-		const newOrder = card?.map((item) => {
+		const newOrder = filterdCardByAmout?.map((item) => {
 			if (item.id === existingItem.id) {
 				return { ...item, amount: existingItem.amount + 1 };
 			}
@@ -24,10 +28,10 @@ export const addProductToCard = (
 		});
 		return newOrder;
 	}
-	if (!card) {
+	if (!filterdCardByAmout) {
 		return [product];
 	}
-	return [...card, { ...product }];
+	return [...filterdCardByAmout, { ...product }];
 };
 export const removeProductFromCard = (
 	card: Product[] | undefined,

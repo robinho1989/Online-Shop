@@ -6,4 +6,4 @@ export const registerSchema = yup.object().shape({
 });
 export const validationSchema = yup
 	.object()
-	.shape({ amount: yup.number().max(10) });
+	.shape({ amount: yup.number().max(9) });
