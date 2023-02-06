@@ -4,6 +4,7 @@ import { ProductView } from '../views/productView/ProductView';
 
 export default function ProductDetail() {
 	const router = useRouter();
+
 	const { slug } = router.query;
 	const productSlug = typeof slug === 'string' ? slug : undefined;
 	const { data, loading, error } = useGetProductDetailsBySlugQuery({

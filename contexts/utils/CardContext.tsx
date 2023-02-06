@@ -45,6 +45,7 @@ export const CardProvider = ({
 		<CardContext.Provider
 			value={{
 				card,
+
 				addProduct: (product: Product) => {
 					setCard(addProductToCard(card, product));
 				},
