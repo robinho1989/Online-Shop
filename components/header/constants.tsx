@@ -16,5 +16,5 @@ export const headerLinks: HeaderLnks[] = [
 
 	{ Icon: FaUser, href: '' },
 
-	{ Icon: FaShoppingBasket, href: '/basket' },
+	{ Icon: FaShoppingBasket, href: '/basket', },
 ];

@@ -12,7 +12,7 @@ import { headerLinks } from './constants';
 import { GiReturnArrow } from 'react-icons/gi';
 import { HamburgerButton } from '../hamburgerButton/HamburgerButton';
 import { Logo } from '../logo/Logo';
-import { SearchInput } from '../serachInput/SearchInput';
+import { SearchInput } from '../searchInput/SearchInput';
 import { useMemo, useState } from 'react';
 import styles from './header.module.css';
 import { useCardContext } from '../../contexts/utils/CardContext';

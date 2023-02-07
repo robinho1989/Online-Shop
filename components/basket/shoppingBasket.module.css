@@ -1,0 +1,31 @@
+.buttonsContainer {
+	display: flex;
+	justify-content: center;
+}
+.buttonFavourite {
+	margin-right: 1.5rem;
+}
+.product {
+	border-bottom: 1px solid var(--footerLinksBorder);
+}
+.productInfoContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.productQuantity {
+	display: flex;
+	justify-content: center;
+}
+.shoppingBasketContainer {
+	border-bottom: 1px solid var(--footerLinksBorder);
+	padding: 2rem 1rem;
+}
+@media (min-width: 700px) {
+	.productInfoContainer {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
