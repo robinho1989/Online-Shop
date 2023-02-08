@@ -15,7 +15,10 @@ describe('Functionality of card', () => {
 		const stateCard = Array.from({ length: 10 }, () => generateProduct());
 		const cardWithProduct = addProductToCard(stateCard, {
 			amount: 1,
+			description:'lorem ipsum',
 			id: '2',
+			image:'https://random-page.com',
+			isFavourite:false,
 			name: 'name',
 			price: 2000,
 		});

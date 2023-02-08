@@ -12,9 +12,9 @@ type HeaderLnks = { Icon: IconType; href: string };
 export const headerLinks: HeaderLnks[] = [
 	{ Icon: FaPhone, href: '' },
 
-	{ Icon: FaHeart, href: '' },
+	{ Icon: FaHeart, href: '/fovourites-products' },
 
 	{ Icon: FaUser, href: '' },
 
-	{ Icon: FaShoppingBasket, href: '/basket', },
+	{ Icon: FaShoppingBasket, href: '/basket' },
 ];

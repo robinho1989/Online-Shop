@@ -3,20 +3,26 @@ import React, { useEffect, useState } from 'react';
 import {
 	addProductToCard,
 	removeProductFromCard,
+	removeProductFromBasket,
 	productValidation,
+	addToFavourites,
 } from './utilsCardContext';
 type Product = {
 	amount: number;
-	description:string
+	description: string;
 	id: string;
-	image:string,
+	isFavourite: boolean;
+	image: string;
 	name: string;
 	price: number;
 };
 type CardContext = {
 	card: Product[] | undefined;
+	favouritesCard: Product[] | undefined;
 	removeProduct: (product: Product) => void;
+	removeProductFromBasket: (product: Product) => void;
 	addProduct: (product: Product) => void;
+	favouritesProducts: (product: Product) => void;
 };
 export const CardContext = React.createContext<CardContext | undefined>(
 	undefined
@@ -27,7 +33,9 @@ export const CardProvider = ({
 	children: React.ReactElement;
 }) => {
 	const [card, setCard] = useState<Product[] | undefined>(undefined);
-	console.log(productValidation(card));
+	const [favouritesCard, setFavouritesCard] = useState<Product[] | undefined>(
+		undefined
+	);
 	useEffect(() => {
 		const cardFromLocalstorage = localStorage.getItem('card');
 		const parsedCardFromLocalStorage: Product[] | [] = JSON.parse(
@@ -41,18 +49,25 @@ export const CardProvider = ({
 	useEffect(() => {
 		if (card === undefined) return;
 		localStorage.setItem('card', JSON.stringify(card));
+		setFavouritesCard(card.filter((item) => !item.isFavourite === false));
 	}, [card]);
 
 	return (
 		<CardContext.Provider
 			value={{
 				card,
-
+				favouritesCard,
 				addProduct: (product: Product) => {
 					setCard(addProductToCard(card, product));
 				},
+				favouritesProducts: (product: Product) => {
+					setCard(addToFavourites(card, product));
+				},
 				removeProduct: (product: Product) => {
 					setCard(removeProductFromCard(card, product));
+				},
+				removeProductFromBasket: (product: Product) => {
+					setCard(removeProductFromBasket(card, product));
 				},
 			}}
 		>

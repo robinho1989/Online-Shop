@@ -2,9 +2,12 @@ import styles from './shoppingBasket.module.css';
 import { useCardContext } from '../../contexts/utils/CardContext';
 import Link from 'next/link';
 import Image from 'next/image';
+import React from 'react';
 
 export const ShoppingBasket = () => {
-	const { card } = useCardContext();
+	const { card, favouritesProducts, removeProductFromBasket } =
+		useCardContext();
+	
 	return (
 		<div className={styles.shoppingBasketContainer}>
 			<ul className={styles.productsList}>
@@ -25,7 +28,13 @@ export const ShoppingBasket = () => {
 										<p>{product.name}</p>
 										<p>{product.description}</p>
 										<div className={styles.productQuantity}>
-											<p>Ilość: {product.amount}</p>
+											<label htmlFor='quantity'>Ilość:</label>
+											<input
+												id='quantity'
+												placeholder={`${product.amount}`}
+												type='number'
+												value={product.amount}
+											/>
 											<button className={styles.button}>Aktualizuj</button>
 										</div>
 									</div>
@@ -33,8 +42,18 @@ export const ShoppingBasket = () => {
 								</div>
 
 								<div className={styles.buttonsContainer}>
-									<button className={styles.buttonFavourite}>Dodaj do ulubionych</button>
-									<button className={styles.buttonDelete}>Usuń produkt</button>
+									<button
+										onClick={() => favouritesProducts(product)}
+										className={styles.buttonFavourite}
+									>
+										Dodaj do ulubionych
+									</button>
+									<button
+										onClick={() => removeProductFromBasket(product)}
+										className={styles.buttonDelete}
+									>
+										Usuń produkt
+									</button>
 								</div>
 							</article>
 						</li>

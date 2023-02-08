@@ -53,3 +53,30 @@ export const removeProductFromCard = (
 		return removedItems;
 	}
 };
+
+export const removeProductFromBasket = (
+	card: Product[] | undefined,
+	product: Product
+) => {
+	const existingItem = card?.find((item) => item.id === product.id);
+	if (existingItem) {
+		const filteredBasket = card?.filter((item) => item.name !== product.name);
+		return filteredBasket;
+	}
+};
+
+export const addToFavourites = (
+	card: Product[] | undefined,
+	product: Product
+) => {
+	const existingItem = card?.find((item) => item.id === product.id);
+	if (existingItem) {
+		const arrayWithFovourites = card?.map((item) => {
+			if(item.id===existingItem.id){
+				return { ...item, isFavourite: !item.isFavourite };
+			}
+			return item
+		});
+		return arrayWithFovourites;
+	}
+};

@@ -15,6 +15,7 @@ export default function Home() {
 					{data?.products.map((item) => {
 						const propsProduct = {
 							id: item.id,
+							isFavourite:false,
 							image: { url: item.images[0].url, alt: item.images[0].fileName },
 							name: item.name,
 							price: item.price,
