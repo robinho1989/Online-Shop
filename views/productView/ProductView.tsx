@@ -7,6 +7,7 @@ type ProductViewProps = {
 	alt: string;
 	description: string;
 	id: string;
+	isFavourite: boolean;
 	image: string;
 	amount: number;
 	name: string;

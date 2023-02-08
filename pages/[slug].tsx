@@ -22,6 +22,7 @@ export default function ProductDetail() {
 		description: data.products[0].description,
 		id: data.products[0].id,
 		image: data.products[0].images[0].url,
+		isFavourite:false,
 		name: data.products[0].name,
 		price: data.products[0].price,
 	};
